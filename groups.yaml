@@ -1,0 +1,13 @@
+anyone:
+  name: Anyone
+  all: false
+  entities:
+    - person.levi
+    - person.maria
+
+everyone:
+  name: Everyone
+  all: true
+  entities:
+    - person.levi
+    - person.maria

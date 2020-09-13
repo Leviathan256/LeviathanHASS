@@ -1,0 +1,74 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+homeassistant:
+  latitude: !secret lat
+  longitude: !secret lon
+# Text to speech
+tts:
+  - platform: google_translate
+
+http:
+  server_port: !secret http_port
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  ip_ban_enabled: true
+  login_attempts_threshold: 6
+  cors_allowed_origins:
+    - https://google.com
+    - https://www.google.com
+    - https://home-assistant.io
+    - https://www.home-assistant.io
+    - https://nabucasa.com
+    - https://www.nabucasa.com
+    - https://googleapis.com
+    - https://ajax.googleapis.com
+    - https://www.googleapis.com
+    - https://gstatic.com
+    - https://www.gstatic.com
+
+notify:
+  - platform: html5
+    name: FireNotifier
+    vapid_pub_key: !secret firebase_public_key
+    vapid_prv_key: !secret firebase_private_key
+    vapid_email: !secret firebase_acct
+
+asuswrt:
+  host: 6.6.6.1
+  username: !secret asus_user
+  password: !secret asus_passwd
+#  ssh_key: !secret asus_key_loc
+
+switch:
+  - platform: flux
+    lights:
+      - light.bed_lamp_1
+      - light.bed_lamp_2
+      - light.living_room_1
+      - light.living_room_2
+      - light.living_room_3
+    name: Fluxer
+    transition: 30
+    interval: 60
+
+input_select:
+  levi:
+    options:
+      - Home
+      - Just Arrived
+      - Just Left
+      - Away
+      - Extended Away
+  maria:
+    options:
+      - Home
+      - Just Arrived
+      - Just Left
+      - Away
+      - Extended Away
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
