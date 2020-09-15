@@ -68,6 +68,14 @@ input_select:
       - Away
       - Extended Away
 
+input_number:
+  occupancy:
+    initial: 0
+    min: 0
+    max: 50
+    step: 1
+    mode: box
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
