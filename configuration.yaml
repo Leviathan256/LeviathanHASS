@@ -3,6 +3,11 @@ homeassistant:
   latitude: !secret lat
   longitude: !secret lon
 
+logger:
+  default: info
+  logs:
+     hacs: debug
+
 tts:
   - platform: google_translate
 
