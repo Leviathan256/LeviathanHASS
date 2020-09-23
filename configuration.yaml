@@ -1,10 +1,8 @@
-
-# Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 homeassistant:
   latitude: !secret lat
   longitude: !secret lon
-# Text to speech
+
 tts:
   - platform: google_translate
 
@@ -26,6 +24,13 @@ http:
     - https://www.googleapis.com
     - https://gstatic.com
     - https://www.gstatic.com
+
+cloudflare:
+  email: !secret email_address
+  api_key: !secret cloudflare_global
+  zone: leviathan.network
+  records:
+    - leviathan.network
 
 notify:
   - platform: html5
@@ -75,6 +80,13 @@ input_number:
     max: 50
     step: 1
     mode: box
+
+hacs:
+  token: dc899bf5b7a27354147439820318ffe6546cc8d5
+  theme: true
+  appdaemon: true
+  python_script: true
+  options: true
 
 group: !include groups.yaml
 automation: !include automations.yaml
