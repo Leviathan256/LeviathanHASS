@@ -50,15 +50,17 @@ asuswrt:
   password: !secret asus_passwd
 #  ssh_key: !secret asus_key_loc
 
+circadian_lighting:
+
 switch:
-  - platform: flux
-    lights:
+  - platform: circadian_lighting
+    lights_ct:
       - light.bed_lamp_1
       - light.bed_lamp_2
       - light.living_room_1
       - light.living_room_2
       - light.living_room_3
-    name: Fluxer
+    name: Circadian Lighting
     transition: 30
     interval: 60
 
@@ -90,8 +92,12 @@ hacs:
   token: dc899bf5b7a27354147439820318ffe6546cc8d5
   theme: true
   appdaemon: true
+  netdaemon: true
   python_script: true
-  options: true
+
+auto_backup:
+  auto_purge: true
+  backup_timeout: 1800
 
 group: !include groups.yaml
 automation: !include automations.yaml
