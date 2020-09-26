@@ -3,10 +3,8 @@ homeassistant:
   latitude: !secret lat
   longitude: !secret lon
 
-logger:
-  default: info
-  logs:
-     hacs: debug
+frontend:
+  themes: !include_dir_merge_named themes
 
 tts:
   - platform: google_translate
@@ -44,12 +42,6 @@ notify:
     vapid_prv_key: !secret firebase_private_key
     vapid_email: !secret firebase_acct
 
-asuswrt:
-  host: 6.6.6.1
-  username: !secret asus_user
-  password: !secret asus_passwd
-#  ssh_key: !secret asus_key_loc
-
 circadian_lighting:
 
 switch:
@@ -61,8 +53,6 @@ switch:
       - light.living_room_2
       - light.living_room_3
     name: Circadian Lighting
-    transition: 30
-    interval: 60
 
 input_select:
   levi:
