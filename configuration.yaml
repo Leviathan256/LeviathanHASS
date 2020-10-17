@@ -3,6 +3,9 @@ homeassistant:
   latitude: !secret lat
   longitude: !secret lon
 
+recorder:
+  db_url: !secret mariadb_path
+
 frontend:
   themes: !include_dir_merge_named themes
 
@@ -41,18 +44,6 @@ notify:
     vapid_pub_key: !secret firebase_public_key
     vapid_prv_key: !secret firebase_private_key
     vapid_email: !secret firebase_acct
-
-circadian_lighting:
-
-switch:
-  - platform: circadian_lighting
-    lights_ct:
-      - light.bed_lamp_1
-      - light.bed_lamp_2
-      - light.living_room_1
-      - light.living_room_2
-      - light.living_room_3
-    name: Circadian Lighting
 
 input_select:
   levi:
