@@ -1,0 +1,11 @@
+version: "2"
+services:
+    sync:
+        image: resilio/sync:latest
+        volumes:
+         - /mnt/data/supervisor/homeassistant/.sync:/mnt/sync
+         - /mnt/data/supervisor:/mnt/sync/folders
+        ports:
+         - 8888:8888/tcp
+         - 55555:55555
+        restart: always

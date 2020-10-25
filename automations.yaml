@@ -29,4 +29,4 @@
       service: auto_backup.snapshot_full
       data_template:
         name: "WeeklyBackup: {{ now().strftime('%A, %B %-d, %Y') }}"
-        keep_days: 28
+        keep_days: 22

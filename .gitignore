@@ -17,6 +17,8 @@
 .storage
 .google.token
 .uuid
+.sync
+vscode
 keys
 core.*
 core
