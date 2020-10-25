@@ -68,7 +68,7 @@ input_number:
   occupancy:
     initial: 2
     min: 0
-    max: 50
+    max: 2
     step: 1
     mode: box
 
