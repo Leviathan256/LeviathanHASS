@@ -34,12 +34,12 @@ http:
     - https://gstatic.com
     - https://www.gstatic.com
 
-cloudflare:
-  email: !secret email_address
-  api_key: !secret cloudflare_global
-  zone: leviathan.network
-  records:
-    - leviathan.network
+# cloudflare:
+#   email: !secret email_address
+#   api_key: !secret cloudflare_global
+#   zone: leviathan.network
+#   records:
+#     - leviathan.network
 
 notify:
   - platform: html5
