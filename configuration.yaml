@@ -76,7 +76,7 @@ input_number:
     mode: box
 
 hacs:
-  token: dc899bf5b7a27354147439820318ffe6546cc8d5
+  token: !secret git_token
   theme: true
   appdaemon: true
   netdaemon: true
