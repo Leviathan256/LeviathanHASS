@@ -9,6 +9,15 @@ recorder:
   purge_keep_days: 14
   commit_interval: 1
 
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: hass
+  username: hass
+  password: !secret db_pw
+  max_retries: 3
+  default_measurement: state
+
 frontend:
   themes: !include_dir_merge_named themes
 
