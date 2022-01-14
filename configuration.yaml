@@ -9,15 +9,6 @@ recorder:
   purge_keep_days: 14
   commit_interval: 1
 
-influxdb:
-  host: a0d7b954-influxdb
-  port: 8086
-  database: hass
-  username: hass
-  password: !secret db_pw
-  max_retries: 3
-  default_measurement: state
-
 frontend:
   themes: !include_dir_merge_named themes
 
@@ -84,6 +75,11 @@ input_number:
     step: 1
     mode: box
 
+nest:
+  client_id: !secret nest_clientid
+  client_secret: !secret nest_clientsecret
+  project_id: !secret nest_projid
+
 hacs:
   token: !secret git_token
   theme: true
@@ -94,6 +90,14 @@ hacs:
 auto_backup:
   auto_purge: true
   backup_timeout: 1800
+
+sensor:
+  - platform: thermal_comfort
+    sensors:
+      livingroom:
+        friendly_name: Living Room
+        temperature_sensor: sensor.living_room_temperature
+        humidity_sensor: sensor.living_room_humidity
 
 group: !include groups.yaml
 automation: !include automations.yaml

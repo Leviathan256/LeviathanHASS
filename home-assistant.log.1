@@ -1,41 +1,154 @@
-2021-09-16 19:04:51 WARNING (SyncWorker_2) [homeassistant.loader] We found a custom integration fontawesome which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2021-09-16 19:04:51 WARNING (SyncWorker_1) [homeassistant.loader] We found a custom integration plex_assistant which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2021-09-16 19:04:51 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration auto_backup which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2021-09-16 19:04:51 WARNING (SyncWorker_3) [homeassistant.loader] We found a custom integration adaptive_lighting which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2021-09-16 19:04:51 WARNING (SyncWorker_4) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2021-09-16 19:05:11 WARNING (MainThread) [homeassistant.setup] Setup of input_number is taking over 10 seconds.
-2021-09-16 19:05:11 WARNING (MainThread) [homeassistant.setup] Setup of input_text is taking over 10 seconds.
-2021-09-16 19:05:11 WARNING (MainThread) [homeassistant.setup] Setup of zone is taking over 10 seconds.
-2021-09-16 19:05:11 WARNING (MainThread) [homeassistant.setup] Setup of input_select is taking over 10 seconds.
-2021-09-16 19:05:11 WARNING (MainThread) [homeassistant.components.webhook] Received message for unregistered webhook 793ba94df722586f1e64897ddf5047c24622d4a7de568f6207efa8d1d87fe6fe from 162.158.187.248
-2021-09-16 19:05:16 ERROR (MainThread) [snitun.client.client_peer] Challenge/Response error with SniTun server
-2021-09-16 19:05:16 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-16 19:16:03 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Error reading from socket.
-2021-09-16 19:16:03 WARNING (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Error communicating with socket, resetting connection
-2021-09-16 19:16:03 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.79', 32171)), retrying in 5.0s
-2021-09-16 19:36:32 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Unexpected error
+2022-01-14 12:43:13 WARNING (SyncWorker_1) [homeassistant.loader] We found a custom integration thermal_comfort which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-01-14 12:43:13 WARNING (SyncWorker_3) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-01-14 12:43:13 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration auto_backup which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-01-14 12:43:13 WARNING (SyncWorker_2) [homeassistant.loader] We found a custom integration fontawesome which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-01-14 12:43:13 WARNING (SyncWorker_1) [homeassistant.loader] We found a custom integration adaptive_lighting which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-01-14 12:43:38 WARNING (MainThread) [homeassistant.setup] Setup of hacs is taking over 10 seconds.
+2022-01-14 12:44:09 WARNING (SyncWorker_2) [pychromecast.dial] Failed to determine cast type
+2022-01-14 12:44:10 ERROR (MainThread) [homeassistant.config_entries] Error setting up entry Home for unifi
 Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 57, in _process
-    result = await handler(hass, data, inputs[0].get("payload"))
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 215, in handle_devices_execute
-    execute_results = await asyncio.gather(
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 158, in _entity_execute
-    await entity.execute(data, execution)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 570, in execute
-    await trt.execute(command, data, params, challenge)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/trait.py", line 361, in execute
-    await self.hass.services.async_call(
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1492, in async_call
-    task.result()
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1527, in _execute_service
+  File "/usr/src/homeassistant/homeassistant/config_entries.py", line 313, in async_setup
+    result = await component.async_setup_entry(hass, self)  # type: ignore
+  File "/usr/src/homeassistant/homeassistant/components/unifi/__init__.py", line 38, in async_setup_entry
+    if not await controller.async_setup():
+  File "/usr/src/homeassistant/homeassistant/components/unifi/controller.py", line 316, in async_setup
+    await self.api.initialize()
+  File "/usr/local/lib/python3.9/site-packages/aiounifi/controller.py", line 138, in initialize
+    await self.clients.update()
+  File "/usr/local/lib/python3.9/site-packages/aiounifi/api.py", line 111, in update
+    raw = await self._request("get", self._path)
+  File "/usr/local/lib/python3.9/site-packages/aiounifi/controller.py", line 259, in request
+    return await self._request(method, path, json, url)
+  File "/usr/local/lib/python3.9/site-packages/aiounifi/controller.py", line 308, in _request
+    raise ResponseError(f"Call {url} received 404 Not Found")
+aiounifi.errors.ResponseError: Call https://6.6.6.1:443/proxy/network/api/s/default/stat/sta received 404 Not Found
+2022-01-14 12:44:23 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.171 (172.70.175.171). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:44:23 WARNING (MainThread) [homeassistant.components.cloud.google_config] Error reporting state - 5: Requested entity was not found.
+2022-01-14 12:45:04 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.2 (172.70.34.2). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:46:49 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.58 (172.70.134.58). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:48:41 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.174.78 (172.70.174.78). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:48:59 WARNING (MainThread) [haffmpeg.tools] Timeout reading image.
+2022-01-14 12:49:14 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.51 (172.70.175.51). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:49:21 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.236 (172.70.134.236). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:49:27 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.51 (172.70.175.51). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:49:28 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.236 (172.70.134.236). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:49:33 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.236 (172.70.134.236). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:49:39 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.236 (172.70.134.236). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:50:04 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.78.104 (162.158.78.104). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:50:09 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.174.78 (172.70.174.78). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:50:09 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.174.78 (172.70.174.78). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:50:13 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.144 (172.70.34.144). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:50:17 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.228 (172.70.134.228). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:50:21 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.228 (172.70.134.228). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:50:24 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.51 (172.70.175.51). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:50:42 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.58 (172.70.134.58). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:51:10 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.174.78 (172.70.174.78). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:51:14 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.58 (172.70.134.58). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:51:34 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.78.240 (162.158.78.240). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:52:11 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.79.77 (162.158.79.77). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:52:11 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.58 (172.70.134.58). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:52:15 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.228 (172.70.134.228). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:52:21 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.51 (172.70.175.51). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:52:29 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.78.96 (162.158.78.96). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:52:31 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.228 (172.70.134.228). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:52:31 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.79.79 (162.158.79.79). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:52:34 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.62 (172.70.34.62). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:52:42 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.58 (172.70.134.58). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:53:08 WARNING (MainThread) [haffmpeg.tools] Timeout reading image.
+2022-01-14 12:53:09 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.171 (172.70.175.171). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:53:13 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.58 (172.70.134.58). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:53:13 WARNING (MainThread) [homeassistant.components.http.ban] Banned IP 172.70.134.58 for too many login attempts
+2022-01-14 12:53:15 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.168 (172.70.34.168). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:53:16 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.96 (172.70.134.96). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:53:23 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.144 (172.70.34.144). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:53:49 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.236 (172.70.134.236). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:54:10 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.228 (172.70.134.228). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:54:18 WARNING (MainThread) [haffmpeg.tools] Timeout reading image.
+2022-01-14 12:54:19 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.144 (172.70.34.144). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:54:29 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.96 (172.70.134.96). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:54:49 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.171 (172.70.175.171). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:54:54 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.171 (172.70.175.171). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:55:01 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.144 (172.70.34.144). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:55:05 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.174.78 (172.70.174.78). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:55:20 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.51 (172.70.175.51). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:55:23 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.168 (172.70.34.168). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:55:27 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.236 (172.70.134.236). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:55:27 WARNING (MainThread) [homeassistant.components.http.ban] Banned IP 172.70.134.236 for too many login attempts
+2022-01-14 12:55:27 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.144 (172.70.34.144). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:55:42 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.2 (172.70.34.2). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:56:09 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.51 (172.70.175.51). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:56:09 WARNING (MainThread) [homeassistant.components.http.ban] Banned IP 172.70.175.51 for too many login attempts
+2022-01-14 12:56:15 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.96 (172.70.134.96). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:56:16 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.2 (172.70.34.2). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:56:24 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.2 (172.70.34.2). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:56:51 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.78.104 (162.158.78.104). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:56:57 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.246.45 (108.162.246.45). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:56:58 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.106.22 (162.158.106.22). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:57:09 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.78.220 (162.158.78.220). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:57:11 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.174.78 (172.70.174.78). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:57:11 WARNING (MainThread) [homeassistant.components.http.ban] Banned IP 172.70.174.78 for too many login attempts
+2022-01-14 12:57:14 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.78.218 (162.158.78.218). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:57:14 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.115 (172.70.175.115). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:57:25 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.96 (172.70.134.96). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:57:30 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.168 (172.70.34.168). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:57:30 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.96 (172.70.134.96). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:57:50 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.246.45 (108.162.246.45). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:58:08 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.228 (172.70.134.228). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:58:08 WARNING (MainThread) [homeassistant.components.http.ban] Banned IP 172.70.134.228 for too many login attempts
+2022-01-14 12:58:11 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.115 (172.70.175.115). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:58:12 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.134.96 (172.70.134.96). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:58:12 WARNING (MainThread) [homeassistant.components.http.ban] Banned IP 172.70.134.96 for too many login attempts
+2022-01-14 12:58:36 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.79.63 (162.158.79.63). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:58:40 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.106.10 (162.158.106.10). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:58:51 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.62 (172.70.34.62). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:58:59 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.106.10 (162.158.106.10). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:59:41 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.100 (108.162.245.100). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 12:59:44 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.168 (172.70.34.168). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:00:50 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.78.188 (162.158.78.188). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:01:06 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.100 (108.162.245.100). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:01:14 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.171 (172.70.175.171). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:01:29 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.56 (108.162.245.56). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:02:10 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.115 (172.70.175.115). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:02:59 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.144 (172.70.34.144). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:02:59 WARNING (MainThread) [homeassistant.components.http.ban] Banned IP 172.70.34.144 for too many login attempts
+2022-01-14 13:03:09 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.115 (172.70.175.115). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:03:22 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.168 (172.70.34.168). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:03:44 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.78.246 (162.158.78.246). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:03:50 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.96 (108.162.245.96). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:03:51 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.246.195 (108.162.246.195). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:03:57 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.246.195 (108.162.246.195). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:03:59 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.58 (108.162.245.58). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:04:13 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.106.148 (162.158.106.148). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:04:22 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.246.45 (108.162.246.45). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:04:35 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.56 (108.162.245.56). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:04:37 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.171 (172.70.175.171). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:04:37 WARNING (MainThread) [homeassistant.components.http.ban] Banned IP 172.70.175.171 for too many login attempts
+2022-01-14 13:04:45 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.96 (108.162.245.96). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:04:45 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.246.19 (108.162.246.19). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:04:48 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.58 (108.162.245.58). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:05:08 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.58 (108.162.245.58). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:06:14 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.106.22 (162.158.106.22). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:06:23 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.106.10 (162.158.106.10). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:06:52 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.58 (108.162.245.58). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:07:06 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.246.45 (108.162.246.45). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:07:18 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.58 (108.162.245.58). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:07:32 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.246.19 (108.162.246.19). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:08:15 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.56 (108.162.245.56). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:10:04 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.106.148 (162.158.106.148). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:10:44 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.246.45 (108.162.246.45). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:10:55 ERROR (MainThread) [homeassistant.core] Error executing service: <ServiceCall switch.turn_off (c:92dec3115bda28009ca45d72406d1729): entity_id=['switch.living_room_smart_tv']>
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1511, in catch_exceptions
+    await coro_or_task
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1530, in _execute_service
     await handler.job.target(service_call)
-  File "/usr/src/homeassistant/homeassistant/helpers/entity_component.py", line 213, in handle_service
+  File "/usr/src/homeassistant/homeassistant/helpers/entity_component.py", line 209, in handle_service
     await self.hass.helpers.service.entity_service_call(
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 658, in entity_service_call
+  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 663, in entity_service_call
     future.result()  # pop exception if have
-  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 843, in async_request_call
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 896, in async_request_call
     await coro
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 695, in _handle_entity_call
+  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 700, in _handle_entity_call
     await result
   File "/usr/src/homeassistant/homeassistant/components/smartthings/switch.py", line 39, in async_turn_off
     await self._device.switch_off(set_status=True)
@@ -49,644 +162,69 @@ Traceback (most recent call last):
     return await self.request("post", self._api_base + resource, data=data)
   File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 376, in request
     resp.raise_for_status()
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/client_reqrep.py", line 1000, in raise_for_status
+  File "/usr/local/lib/python3.9/site-packages/aiohttp/client_reqrep.py", line 1004, in raise_for_status
     raise ClientResponseError(
 aiohttp.client_exceptions.ClientResponseError: 409, message='Conflict', url=URL('https://api.smartthings.com/v1/devices/650f9917-534d-4698-8409-29cc0a350971/commands')
-2021-09-16 19:36:32 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error handling message {'inputs': [{'context': {'locale_country': 'US', 'locale_language': 'en'}, 'intent': 'action.devices.EXECUTE', 'payload': {'commands': [{'devices': [{'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.living_room_smart_tv'}], 'execution': [{'command': 'action.devices.commands.OnOff', 'params': {'on': False}}]}]}}], 'requestId': '16337997681652449853'}: {'errorCode': 'unknownError'}
-2021-09-16 19:40:00 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities switch.roof_christmas_lights1
-2021-09-16 22:58:45 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-16 23:39:43 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-16 23:40:05 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Unexpected error
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 57, in _process
-    result = await handler(hass, data, inputs[0].get("payload"))
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 215, in handle_devices_execute
-    execute_results = await asyncio.gather(
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 158, in _entity_execute
-    await entity.execute(data, execution)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 570, in execute
-    await trt.execute(command, data, params, challenge)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/trait.py", line 361, in execute
-    await self.hass.services.async_call(
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1492, in async_call
-    task.result()
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1527, in _execute_service
-    await handler.job.target(service_call)
-  File "/usr/src/homeassistant/homeassistant/helpers/entity_component.py", line 213, in handle_service
-    await self.hass.helpers.service.entity_service_call(
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 658, in entity_service_call
-    future.result()  # pop exception if have
-  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 843, in async_request_call
-    await coro
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 695, in _handle_entity_call
-    await result
-  File "/usr/src/homeassistant/homeassistant/components/smartthings/switch.py", line 39, in async_turn_off
-    await self._device.switch_off(set_status=True)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/device.py", line 1013, in switch_off
-    result = await self.command(component_id, Capability.switch, Command.off)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/device.py", line 825, in command
-    response = await self._api.post_device_command(
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 147, in post_device_command
-    return await self.post(API_DEVICE_COMMAND.format(device_id=device_id), data)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 395, in post
-    return await self.request("post", self._api_base + resource, data=data)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 376, in request
-    resp.raise_for_status()
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/client_reqrep.py", line 1000, in raise_for_status
-    raise ClientResponseError(
-aiohttp.client_exceptions.ClientResponseError: 409, message='Conflict', url=URL('https://api.smartthings.com/v1/devices/650f9917-534d-4698-8409-29cc0a350971/commands')
-2021-09-16 23:40:05 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error handling message {'inputs': [{'context': {'locale_country': 'US', 'locale_language': 'en'}, 'intent': 'action.devices.EXECUTE', 'payload': {'commands': [{'devices': [{'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.dehumidifier'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.adaptive_lighting_bedroom_lights'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.bed_lamp_1'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.bed_lamp_2'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.dining_room_light_2'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.kitchen_light'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.adaptive_lighting_library_lights'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.hue_color_lamp_1_3'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.hue_color_lamp_1_2'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.hue_color_lamp_1'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.adaptive_lighting_living_room_lights'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.living_room_lamp_1'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.living_room_lamp_2'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.living_room_lamp_3'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.living_room_light_3'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.living_room_smart_tv'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.black_series_dimmer'}], 'execution': [{'command': 'action.devices.commands.OnOff', 'params': {'on': False}}]}]}}], 'requestId': '9093252730805762483'}: {'errorCode': 'unknownError'}
-2021-09-16 23:40:06 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities switch.air_purifier_2
-2021-09-16 23:57:35 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 00:19:38 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 00:23:55 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 00:25:57 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 00:39:36 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 00:45:53 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 00:58:29 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 01:22:40 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 01:36:20 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 01:40:31 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 01:59:28 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 02:07:45 WARNING (Thread-13) [pychromecast.socket_client] [Library Mini(6.6.6.179):8009] Heartbeat timeout, resetting connection
-2021-09-17 02:07:48 ERROR (Thread-13) [pychromecast.socket_client] [Library Mini(6.6.6.179):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.179', 8009)), retrying in 5.0s
-2021-09-17 02:14:10 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 02:30:00 WARNING (MainThread) [custom_components.auto_backup] The service 'snapshot_full' is deprecated and will be removed in Home Assistant 2021.11, use 'backup_full' instead
-2021-09-17 02:40:26 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 02:41:28 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 02:48:50 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 02:53:11 WARNING (Thread-10) [pychromecast.socket_client] [Living Room Mini(6.6.6.79):8009] Heartbeat timeout, resetting connection
-2021-09-17 02:53:18 ERROR (Thread-10) [pychromecast.socket_client] [Living Room Mini(6.6.6.79):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.79', 8009)), retrying in 5.0s
-2021-09-17 03:14:34 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Error reading from socket.
-2021-09-17 03:14:34 WARNING (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Error communicating with socket, resetting connection
-2021-09-17 03:15:05 WARNING (Thread-6) [pychromecast.socket_client] [Living Room speaker(6.6.6.93):8009] Heartbeat timeout, resetting connection
-2021-09-17 03:15:18 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Error reading from socket.
-2021-09-17 03:15:18 WARNING (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Error communicating with socket, resetting connection
-2021-09-17 03:15:18 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.79', 32171)), retrying in 5.0s
-2021-09-17 03:24:48 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 03:25:07 ERROR (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.169', 8009)), retrying in 5.0s
-2021-09-17 03:25:16 WARNING (Thread-14) [pychromecast.socket_client] [Living Room TV(6.6.6.20):8009] Heartbeat timeout, resetting connection
-2021-09-17 03:25:35 ERROR (Thread-14) [pychromecast.socket_client] [Living Room TV(6.6.6.20):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.20', 8009)), retrying in 5.0s
-2021-09-17 04:09:40 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 04:20:37 ERROR (Thread-12) [pychromecast.socket_client] [Kitchen Hub(6.6.6.142):8009] Error reading from socket.
-2021-09-17 04:20:37 WARNING (Thread-12) [pychromecast.socket_client] [Kitchen Hub(6.6.6.142):8009] Error communicating with socket, resetting connection
-2021-09-17 04:20:37 ERROR (Thread-12) [pychromecast.socket_client] [Kitchen Hub(6.6.6.142):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.142', 8009)), retrying in 5.0s
-2021-09-17 04:31:28 ERROR (Thread-8) [pychromecast.socket_client] [Bedroom Hub(6.6.6.199):8009] Error reading from socket.
-2021-09-17 04:31:28 WARNING (Thread-8) [pychromecast.socket_client] [Bedroom Hub(6.6.6.199):8009] Error communicating with socket, resetting connection
-2021-09-17 04:31:28 ERROR (Thread-8) [pychromecast.socket_client] [Bedroom Hub(6.6.6.199):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.199', 8009)), retrying in 5.0s
-2021-09-17 04:33:26 WARNING (Thread-9) [pychromecast.socket_client] [Library TV(6.6.6.21):8009] Heartbeat timeout, resetting connection
-2021-09-17 04:33:41 ERROR (Thread-9) [pychromecast.socket_client] [Library TV(6.6.6.21):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.21', 8009)), retrying in 5.0s
-2021-09-17 04:39:04 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 05:25:18 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 05:36:54 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 06:24:08 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 08:20:12 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Unexpected error
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 57, in _process
-    result = await handler(hass, data, inputs[0].get("payload"))
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 215, in handle_devices_execute
-    execute_results = await asyncio.gather(
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 158, in _entity_execute
-    await entity.execute(data, execution)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 570, in execute
-    await trt.execute(command, data, params, challenge)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/trait.py", line 361, in execute
-    await self.hass.services.async_call(
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1492, in async_call
-    task.result()
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1527, in _execute_service
-    await handler.job.target(service_call)
-  File "/usr/src/homeassistant/homeassistant/helpers/entity_component.py", line 213, in handle_service
-    await self.hass.helpers.service.entity_service_call(
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 658, in entity_service_call
-    future.result()  # pop exception if have
-  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 843, in async_request_call
-    await coro
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 695, in _handle_entity_call
-    await result
-  File "/usr/src/homeassistant/homeassistant/components/smartthings/switch.py", line 39, in async_turn_off
-    await self._device.switch_off(set_status=True)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/device.py", line 1013, in switch_off
-    result = await self.command(component_id, Capability.switch, Command.off)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/device.py", line 825, in command
-    response = await self._api.post_device_command(
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 147, in post_device_command
-    return await self.post(API_DEVICE_COMMAND.format(device_id=device_id), data)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 395, in post
-    return await self.request("post", self._api_base + resource, data=data)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 376, in request
-    resp.raise_for_status()
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/client_reqrep.py", line 1000, in raise_for_status
-    raise ClientResponseError(
-aiohttp.client_exceptions.ClientResponseError: 409, message='Conflict', url=URL('https://api.smartthings.com/v1/devices/650f9917-534d-4698-8409-29cc0a350971/commands')
-2021-09-17 08:20:12 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error handling message {'inputs': [{'context': {'locale_country': 'US', 'locale_language': 'en'}, 'intent': 'action.devices.EXECUTE', 'payload': {'commands': [{'devices': [{'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.living_room_smart_tv'}], 'execution': [{'command': 'action.devices.commands.OnOff', 'params': {'on': False}}]}]}}], 'requestId': '1564583352580283289'}: {'errorCode': 'unknownError'}
-2021-09-17 08:28:02 ERROR (MainThread) [aiohttp.server] Error handling request
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_protocol.py", line 422, in _handle_request
-    resp = await self._request_handler(request)
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_app.py", line 468, in _handle
-    match_info = await self._router.resolve(request)
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_urldispatcher.py", line 1004, in resolve
-    match_dict, allowed = await resource.resolve(request)
-  File "/usr/src/homeassistant/homeassistant/components/frontend/__init__.py", line 543, in resolve
-    and request.url.parts[1] not in self.hass.data[DATA_PANELS]
-IndexError: tuple index out of range
-2021-09-17 09:05:28 ERROR (MainThread) [custom_components.hacs] <Theme myleskeeffe/clear-theme-dark-vibrant> GitHub returned 502 for https://api.github.com/repos/myleskeeffe/clear-theme-dark-vibrant
-2021-09-17 09:05:28 ERROR (MainThread) [custom_components.hacs] myleskeeffe/clear-theme-dark-vibrant - GitHub returned 502 for https://api.github.com/repos/myleskeeffe/clear-theme-dark-vibrant
-2021-09-17 11:52:24 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Unexpected error
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 57, in _process
-    result = await handler(hass, data, inputs[0].get("payload"))
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 215, in handle_devices_execute
-    execute_results = await asyncio.gather(
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 158, in _entity_execute
-    await entity.execute(data, execution)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 570, in execute
-    await trt.execute(command, data, params, challenge)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/trait.py", line 361, in execute
-    await self.hass.services.async_call(
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1492, in async_call
-    task.result()
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1527, in _execute_service
-    await handler.job.target(service_call)
-  File "/usr/src/homeassistant/homeassistant/helpers/entity_component.py", line 213, in handle_service
-    await self.hass.helpers.service.entity_service_call(
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 658, in entity_service_call
-    future.result()  # pop exception if have
-  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 843, in async_request_call
-    await coro
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 695, in _handle_entity_call
-    await result
-  File "/usr/src/homeassistant/homeassistant/components/smartthings/switch.py", line 39, in async_turn_off
-    await self._device.switch_off(set_status=True)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/device.py", line 1013, in switch_off
-    result = await self.command(component_id, Capability.switch, Command.off)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/device.py", line 825, in command
-    response = await self._api.post_device_command(
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 147, in post_device_command
-    return await self.post(API_DEVICE_COMMAND.format(device_id=device_id), data)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 395, in post
-    return await self.request("post", self._api_base + resource, data=data)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 376, in request
-    resp.raise_for_status()
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/client_reqrep.py", line 1000, in raise_for_status
-    raise ClientResponseError(
-aiohttp.client_exceptions.ClientResponseError: 409, message='Conflict', url=URL('https://api.smartthings.com/v1/devices/650f9917-534d-4698-8409-29cc0a350971/commands')
-2021-09-17 11:52:24 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error handling message {'inputs': [{'context': {'locale_country': 'US', 'locale_language': 'en'}, 'intent': 'action.devices.EXECUTE', 'payload': {'commands': [{'devices': [{'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.living_room_smart_tv'}], 'execution': [{'command': 'action.devices.commands.OnOff', 'params': {'on': False}}]}]}}], 'requestId': '6368026761690927819'}: {'errorCode': 'unknownError'}
-2021-09-17 13:35:22 ERROR (MainThread) [aiohttp.server] Error handling request
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_protocol.py", line 422, in _handle_request
-    resp = await self._request_handler(request)
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_app.py", line 468, in _handle
-    match_info = await self._router.resolve(request)
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_urldispatcher.py", line 1004, in resolve
-    match_dict, allowed = await resource.resolve(request)
-  File "/usr/src/homeassistant/homeassistant/components/frontend/__init__.py", line 543, in resolve
-    and request.url.parts[1] not in self.hass.data[DATA_PANELS]
-IndexError: tuple index out of range
-2021-09-17 16:07:23 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Unexpected error
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 57, in _process
-    result = await handler(hass, data, inputs[0].get("payload"))
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 215, in handle_devices_execute
-    execute_results = await asyncio.gather(
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 158, in _entity_execute
-    await entity.execute(data, execution)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 570, in execute
-    await trt.execute(command, data, params, challenge)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/trait.py", line 361, in execute
-    await self.hass.services.async_call(
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1492, in async_call
-    task.result()
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1527, in _execute_service
-    await handler.job.target(service_call)
-  File "/usr/src/homeassistant/homeassistant/helpers/entity_component.py", line 213, in handle_service
-    await self.hass.helpers.service.entity_service_call(
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 658, in entity_service_call
-    future.result()  # pop exception if have
-  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 843, in async_request_call
-    await coro
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 695, in _handle_entity_call
-    await result
-  File "/usr/src/homeassistant/homeassistant/components/smartthings/switch.py", line 39, in async_turn_off
-    await self._device.switch_off(set_status=True)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/device.py", line 1013, in switch_off
-    result = await self.command(component_id, Capability.switch, Command.off)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/device.py", line 825, in command
-    response = await self._api.post_device_command(
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 147, in post_device_command
-    return await self.post(API_DEVICE_COMMAND.format(device_id=device_id), data)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 395, in post
-    return await self.request("post", self._api_base + resource, data=data)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 376, in request
-    resp.raise_for_status()
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/client_reqrep.py", line 1000, in raise_for_status
-    raise ClientResponseError(
-aiohttp.client_exceptions.ClientResponseError: 409, message='Conflict', url=URL('https://api.smartthings.com/v1/devices/650f9917-534d-4698-8409-29cc0a350971/commands')
-2021-09-17 16:07:23 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error handling message {'inputs': [{'context': {'locale_country': 'US', 'locale_language': 'en'}, 'intent': 'action.devices.EXECUTE', 'payload': {'commands': [{'devices': [{'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.living_room_smart_tv'}], 'execution': [{'command': 'action.devices.commands.OnOff', 'params': {'on': False}}]}]}}], 'requestId': '9697424052637695338'}: {'errorCode': 'unknownError'}
-2021-09-17 17:09:16 ERROR (MainThread) [aiohttp.server] Error handling request
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_protocol.py", line 422, in _handle_request
-    resp = await self._request_handler(request)
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_app.py", line 468, in _handle
-    match_info = await self._router.resolve(request)
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_urldispatcher.py", line 1004, in resolve
-    match_dict, allowed = await resource.resolve(request)
-  File "/usr/src/homeassistant/homeassistant/components/frontend/__init__.py", line 543, in resolve
-    and request.url.parts[1] not in self.hass.data[DATA_PANELS]
-IndexError: tuple index out of range
-2021-09-17 19:01:48 WARNING (Thread-8) [pychromecast.socket_client] [Bedroom Hub(6.6.6.199):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:01:50 WARNING (Thread-12) [pychromecast.socket_client] [Kitchen Hub(6.6.6.142):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:17:18 WARNING (MainThread) [hass_nabucasa.iot] Unable to connect: Cannot connect to host cloud.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:17:24 WARNING (MainThread) [hass_nabucasa.google_report_state] Unable to connect: Cannot connect to host remotestate.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:17:27 WARNING (MainThread) [hass_nabucasa.iot] Unable to connect: Cannot connect to host cloud.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:17:33 WARNING (MainThread) [hass_nabucasa.google_report_state] Unable to connect: Cannot connect to host remotestate.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:17:36 WARNING (MainThread) [homeassistant.components.unifi] Lost connection to UniFi controller
-2021-09-17 19:17:41 WARNING (MainThread) [hass_nabucasa.iot] Unable to connect: Cannot connect to host cloud.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:17:48 ERROR (MainThread) [snitun.multiplexer.core] Ping fails, no response from peer
-2021-09-17 19:17:53 WARNING (MainThread) [hass_nabucasa.google_report_state] Unable to connect: Cannot connect to host remotestate.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:18:02 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:18:02 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:18:03 WARNING (MainThread) [hass_nabucasa.iot] Unable to connect: Cannot connect to host cloud.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:18:05 WARNING (MainThread) [homeassistant.components.songpal.media_player] [Living Room Receiver(http://6.6.6.7:10000/sony)] Got disconnected, trying to reconnect
-2021-09-17 19:18:06 ERROR (MainThread) [homeassistant.components.hue.sensor_base] Timeout fetching sensor data
-2021-09-17 19:18:08 ERROR (MainThread) [homeassistant.components.hue.light] Timeout fetching light data
-2021-09-17 19:18:10 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:18:10 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:18:11 WARNING (Thread-8) [pychromecast.socket_client] [Bedroom Hub(6.6.6.199):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:18:12 WARNING (Thread-15) [pychromecast.socket_client] [Living Room Receiver(6.6.6.7):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:18:13 WARNING (Thread-14) [pychromecast.socket_client] [Living Room TV(6.6.6.20):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:18:14 WARNING (Thread-9) [pychromecast.socket_client] [Library TV(6.6.6.21):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:18:14 WARNING (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Heartbeat timeout, resetting connection
-2021-09-17 19:18:14 WARNING (Thread-6) [pychromecast.socket_client] [Living Room speaker(6.6.6.93):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:18:14 WARNING (Thread-10) [pychromecast.socket_client] [Living Room Mini(6.6.6.79):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:18:15 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:18:16 WARNING (Thread-12) [pychromecast.socket_client] [Kitchen Hub(6.6.6.142):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:18:17 WARNING (Thread-13) [pychromecast.socket_client] [Library Mini(6.6.6.179):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:18:21 WARNING (MainThread) [hass_nabucasa.google_report_state] Unable to connect: Cannot connect to host remotestate.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:18:29 ERROR (Thread-8) [pychromecast.socket_client] [Bedroom Hub(6.6.6.199):8009] Failed to connect to service ServiceInfo(type='mdns', data='google-nest-hub-dc84f2e5365a31ca48f47662a364cef0._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:18:30 ERROR (Thread-15) [pychromecast.socket_client] [Living Room Receiver(6.6.6.7):8009] Failed to connect to service ServiceInfo(type='mdns', data='C4A-bc2808681162be96d81440e769c7d13b._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:18:30 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:18:30 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:18:32 ERROR (Thread-12) [pychromecast.socket_client] [Kitchen Hub(6.6.6.142):8009] Failed to connect to service ServiceInfo(type='mdns', data='google-nest-hub-7f4446609ab4f0f6de9eaf9510f05e10._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:18:33 ERROR (Thread-13) [pychromecast.socket_client] [Library Mini(6.6.6.179):8009] Failed to connect to service ServiceInfo(type='mdns', data='Google-Nest-Mini-4b6a51d21f8f4426a4b66b2e5f0a7014._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:18:33 ERROR (Thread-9) [pychromecast.socket_client] [Library TV(6.6.6.21):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.21', 8009)), retrying in 5.0s
-2021-09-17 19:18:33 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Failed to connect to service ServiceInfo(type='mdns', data='Google-Cast-Group-afbc416fa25b48169ee9aa4bf14be785-1._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:18:33 ERROR (Thread-6) [pychromecast.socket_client] [Living Room speaker(6.6.6.93):8009] Failed to connect to service ServiceInfo(type='mdns', data='Google-Home-37a52bf560287c5fb7978e6579f20d4e._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:18:33 ERROR (Thread-10) [pychromecast.socket_client] [Living Room Mini(6.6.6.79):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.79', 8009)), retrying in 5.0s
-2021-09-17 19:18:33 ERROR (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.169', 8009)), retrying in 5.0s
-2021-09-17 19:18:43 ERROR (Thread-14) [pychromecast.socket_client] [Living Room TV(6.6.6.20):8009] Failed to connect to service ServiceInfo(type='mdns', data='Chromecast-Ultra-26dfac7cee536739e9523558cd63255b._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:18:45 WARNING (MainThread) [homeassistant.components.songpal.media_player] [Living Room Receiver(http://6.6.6.7:10000/sony)] Connection reestablished
-2021-09-17 19:18:50 WARNING (MainThread) [hass_nabucasa.iot] Unable to connect: Cannot connect to host cloud.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:18:50 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:18:50 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:19:03 WARNING (MainThread) [hass_nabucasa.google_report_state] Unable to connect: Cannot connect to host remotestate.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:19:10 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:19:10 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:19:15 WARNING (MainThread) [homeassistant.components.unifi] Lost connection to UniFi controller
-2021-09-17 19:19:28 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:19:28 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:19:42 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:19:42 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:19:48 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:19:48 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:19:56 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:19:56 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:20:04 WARNING (MainThread) [hass_nabucasa.iot] Unable to connect: Cannot connect to host cloud.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:20:09 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:20:09 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:25:42 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(37a52bf5-6028-7c5f-b797-8e6579f20d4e.local.):32171] Error reading from socket.
-2021-09-17 19:25:42 WARNING (Thread-11) [pychromecast.socket_client] [Home Speakers(37a52bf5-6028-7c5f-b797-8e6579f20d4e.local.):32171] Error communicating with socket, resetting connection
-2021-09-17 19:25:42 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Failed to connect to service ServiceInfo(type='mdns', data='Google-Cast-Group-afbc416fa25b48169ee9aa4bf14be785-2._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:30:49 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Error reading from socket.
-2021-09-17 19:30:49 WARNING (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Error communicating with socket, resetting connection
-2021-09-17 19:31:20 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Error reading from socket.
-2021-09-17 19:31:20 WARNING (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Error communicating with socket, resetting connection
-2021-09-17 19:35:19 WARNING (MainThread) [hass_nabucasa.google_report_state] Unable to connect: Cannot connect to host remotestate.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:35:21 WARNING (MainThread) [hass_nabucasa.iot] Unable to connect: Cannot connect to host cloud.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:35:29 WARNING (MainThread) [hass_nabucasa.google_report_state] Unable to connect: Cannot connect to host remotestate.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:35:34 WARNING (MainThread) [hass_nabucasa.iot] Unable to connect: Cannot connect to host cloud.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:35:45 WARNING (MainThread) [hass_nabucasa.google_report_state] Unable to connect: Cannot connect to host remotestate.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:35:52 WARNING (MainThread) [hass_nabucasa.iot] Unable to connect: Cannot connect to host cloud.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:35:56 ERROR (MainThread) [snitun.multiplexer.core] Ping fails, no response from peer
-2021-09-17 19:36:06 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:36:06 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:36:12 WARNING (MainThread) [hass_nabucasa.google_report_state] Unable to connect: Cannot connect to host remotestate.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:36:12 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:36:12 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:36:21 WARNING (MainThread) [hass_nabucasa.iot] Unable to connect: Cannot connect to host cloud.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:36:22 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:36:22 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:36:32 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:36:32 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:36:44 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:36:44 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:36:48 ERROR (MainThread) [homeassistant.components.hue.light] Timeout fetching light data
-2021-09-17 19:36:48 WARNING (MainThread) [homeassistant.components.songpal.media_player] [Living Room Receiver(http://6.6.6.7:10000/sony)] Got disconnected, trying to reconnect
-2021-09-17 19:36:50 ERROR (MainThread) [homeassistant.components.hue.sensor_base] Timeout fetching sensor data
-2021-09-17 19:36:51 WARNING (Thread-14) [pychromecast.socket_client] [Living Room TV(6.6.6.20):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:36:52 WARNING (Thread-9) [pychromecast.socket_client] [Library TV(6.6.6.21):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:36:52 WARNING (Thread-13) [pychromecast.socket_client] [Library Mini(6.6.6.179):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:36:54 WARNING (Thread-8) [pychromecast.socket_client] [Bedroom Hub(6.6.6.199):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:36:54 WARNING (Thread-12) [pychromecast.socket_client] [Kitchen Hub(6.6.6.142):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:36:55 WARNING (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Heartbeat timeout, resetting connection
-2021-09-17 19:37:00 WARNING (Thread-15) [pychromecast.socket_client] [Living Room Receiver(6.6.6.7):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:37:00 WARNING (Thread-10) [pychromecast.socket_client] [Living Room Mini(6.6.6.79):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:37:00 WARNING (Thread-6) [pychromecast.socket_client] [Living Room speaker(37a52bf5-6028-7c5f-b797-8e6579f20d4e.local.):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:37:01 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 19:37:02 WARNING (MainThread) [hass_nabucasa.google_report_state] Unable to connect: Cannot connect to host remotestate.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:37:03 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:37:03 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:37:12 WARNING (MainThread) [hass_nabucasa.iot] Unable to connect: Cannot connect to host cloud.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:37:18 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:37:18 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:37:21 ERROR (Thread-14) [pychromecast.socket_client] [Living Room TV(6.6.6.20):8009] Failed to connect to service ServiceInfo(type='mdns', data='Chromecast-Ultra-26dfac7cee536739e9523558cd63255b._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:37:22 ERROR (Thread-9) [pychromecast.socket_client] [Library TV(6.6.6.21):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.21', 8009)), retrying in 5.0s
-2021-09-17 19:37:22 ERROR (Thread-13) [pychromecast.socket_client] [Library Mini(6.6.6.179):8009] Failed to connect to service ServiceInfo(type='mdns', data='Google-Nest-Mini-4b6a51d21f8f4426a4b66b2e5f0a7014._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:37:23 ERROR (MainThread) [metno] Access to https://aa015h6buqvih86i1.api.met.no/weatherapi/locationforecast/2.0/complete returned error 'ClientConnectorError'
-2021-09-17 19:37:24 ERROR (Thread-12) [pychromecast.socket_client] [Kitchen Hub(6.6.6.142):8009] Failed to connect to service ServiceInfo(type='mdns', data='google-nest-hub-7f4446609ab4f0f6de9eaf9510f05e10._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:37:24 ERROR (Thread-8) [pychromecast.socket_client] [Bedroom Hub(6.6.6.199):8009] Failed to connect to service ServiceInfo(type='mdns', data='google-nest-hub-dc84f2e5365a31ca48f47662a364cef0._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:37:26 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:37:26 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:37:28 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.79', 32171)), retrying in 5.0s
-2021-09-17 19:37:30 ERROR (Thread-15) [pychromecast.socket_client] [Living Room Receiver(6.6.6.7):8009] Failed to connect to service ServiceInfo(type='mdns', data='C4A-bc2808681162be96d81440e769c7d13b._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:37:30 WARNING (MainThread) [homeassistant.components.songpal.media_player] [Living Room Receiver(http://6.6.6.7:10000/sony)] Connection reestablished
-2021-09-17 19:37:30 ERROR (Thread-10) [pychromecast.socket_client] [Living Room Mini(6.6.6.79):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.79', 8009)), retrying in 5.0s
-2021-09-17 19:37:30 ERROR (Thread-6) [pychromecast.socket_client] [Living Room speaker(6.6.6.93):8009] Failed to connect to service ServiceInfo(type='mdns', data='Google-Home-37a52bf560287c5fb7978e6579f20d4e._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-17 19:37:31 ERROR (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.169', 8009)), retrying in 5.0s
-2021-09-17 19:37:42 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:37:42 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:37:51 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:37:51 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:37:57 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:37:57 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:38:17 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:38:17 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:38:23 WARNING (MainThread) [hass_nabucasa.iot] Unable to connect: Cannot connect to host cloud.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:38:24 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:38:24 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:38:25 WARNING (MainThread) [hass_nabucasa.google_report_state] Unable to connect: Cannot connect to host remotestate.nabucasa.com:443 ssl:default [Try again]
-2021-09-17 19:38:31 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:38:31 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:38:41 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:38:41 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:38:48 ERROR (MainThread) [snitun.client.client_peer] Can't connect to SniTun server us-east-1-2.ui.nabu.casa:443
-2021-09-17 19:38:48 ERROR (MainThread) [hass_nabucasa.remote] Connection problem to snitun server
-2021-09-17 19:39:02 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities switch.roof_christmas_lights1
-2021-09-17 19:45:28 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Error reading from socket.
-2021-09-17 19:45:28 WARNING (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Error communicating with socket, resetting connection
-2021-09-17 19:45:31 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.79', 32171)), retrying in 5.0s
-2021-09-17 19:52:55 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Error reading from socket.
-2021-09-17 19:52:55 WARNING (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Error communicating with socket, resetting connection
-2021-09-17 20:06:00 ERROR (Thread-17) [plexapi] http://172.18.0.1:32400: HTTPConnectionPool(host='172.18.0.1', port=32400): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fbc06071f40>: Failed to establish a new connection: [Errno 111] Connection refused'))
-2021-09-17 20:06:00 ERROR (Thread-21) [plexapi] http://6.6.6.4:32400: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
-2021-09-17 20:06:00 ERROR (Thread-23) [plexapi] http://76.234.96.235:32400: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
-2021-09-17 20:06:00 ERROR (Thread-16) [plexapi] https://172-18-0-1.ba2867e03de64d71a01566e36616b14d.plex.direct:32400: HTTPSConnectionPool(host='172-18-0-1.ba2867e03de64d71a01566e36616b14d.plex.direct', port=32400): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbc02f64df0>: Failed to establish a new connection: [Errno 111] Connection refused'))
-2021-09-17 20:06:10 ERROR (Thread-22) [plexapi] http://plex.leviathan.name:32400: HTTPConnectionPool(host='plex.leviathan.name', port=32400): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbc06ca03d0>, 'Connection to plex.leviathan.name timed out. (connect timeout=10)'))
-2021-09-17 20:06:11 ERROR (Thread-19) [plexapi] https://plex.leviathan.name:32400: HTTPSConnectionPool(host='plex.leviathan.name', port=32400): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fbc04ecc4f0>, 'Connection to plex.leviathan.name timed out. (connect timeout=10)'))
-2021-09-17 20:15:18 WARNING (SyncWorker_1) [homeassistant.loader] We found a custom integration auto_backup which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2021-09-17 20:15:18 WARNING (SyncWorker_2) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2021-09-17 20:15:18 WARNING (SyncWorker_3) [homeassistant.loader] We found a custom integration adaptive_lighting which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2021-09-17 20:15:18 WARNING (SyncWorker_5) [homeassistant.loader] We found a custom integration fontawesome which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2021-09-17 20:21:33 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 445, in _make_request
-    six.raise_from(e, None)
-  File "<string>", line 3, in raise_from
-  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 440, in _make_request
-    httplib_response = conn.getresponse()
-  File "/usr/local/lib/python3.9/http/client.py", line 1349, in getresponse
-    response.begin()
-  File "/usr/local/lib/python3.9/http/client.py", line 316, in begin
-    version, status, reason = self._read_status()
-  File "/usr/local/lib/python3.9/http/client.py", line 277, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-  File "/usr/local/lib/python3.9/socket.py", line 704, in readinto
-    return self._sock.recv_into(b)
-  File "/usr/local/lib/python3.9/ssl.py", line 1241, in recv_into
-    return self.read(nbytes, buffer)
-  File "/usr/local/lib/python3.9/ssl.py", line 1099, in read
-    return self._sslobj.read(len, buffer)
-socket.timeout: The read operation timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
-    resp = conn.urlopen(
-  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
-    retries = retries.increment(
-  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 532, in increment
-    raise six.reraise(type(error), error, _stacktrace)
-  File "/usr/local/lib/python3.9/site-packages/urllib3/packages/six.py", line 770, in reraise
-    raise value
-  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
-    httplib_response = self._make_request(
-  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 447, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 336, in _raise_timeout
-    raise ReadTimeoutError(
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='6.6.6.28', port=8002): Read timed out. (read timeout=5)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/data_entry_flow.py", line 153, in async_init
-    flow, result = await task
-  File "/usr/src/homeassistant/homeassistant/data_entry_flow.py", line 179, in _async_init
-    result = await self._async_handle_step(flow, flow.init_step, data, init_done)
-  File "/usr/src/homeassistant/homeassistant/data_entry_flow.py", line 260, in _async_handle_step
-    result: FlowResult = await getattr(flow, method)(user_input)
-  File "/usr/src/homeassistant/homeassistant/components/samsungtv/config_flow.py", line 272, in async_step_dhcp
-    await self._async_set_device_unique_id()
-  File "/usr/src/homeassistant/homeassistant/components/samsungtv/config_flow.py", line 99, in _async_set_device_unique_id
-    if not await self._async_get_and_check_device_info():
-  File "/usr/src/homeassistant/homeassistant/components/samsungtv/config_flow.py", line 134, in _async_get_and_check_device_info
-    _port, _method, info = await async_get_device_info(
-  File "/usr/src/homeassistant/homeassistant/components/samsungtv/bridge.py", line 50, in async_get_device_info
-    return await hass.async_add_executor_job(_get_device_info, bridge, host)
-  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 52, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/src/homeassistant/homeassistant/components/samsungtv/bridge.py", line 60, in _get_device_info
-    if info := bridge.device_info():
-  File "/usr/src/homeassistant/homeassistant/components/samsungtv/bridge.py", line 313, in device_info
-    return remote.rest_device_info()
-  File "/usr/local/lib/python3.9/site-packages/samsungtvws/remote.py", line 253, in rest_device_info
-    response = self._rest_request('')
-  File "/usr/local/lib/python3.9/site-packages/samsungtvws/remote.py", line 128, in _rest_request
-    return requests.get(url, timeout=self.timeout, verify=False)
-  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 76, in get
-    return request('get', url, params=params, **kwargs)
-  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 61, in request
-    return session.request(method=method, url=url, **kwargs)
-  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
-    resp = self.send(prep, **send_kwargs)
-  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
-    r = adapter.send(request, **kwargs)
-  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 529, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='6.6.6.28', port=8002): Read timed out. (read timeout=5)
-2021-09-17 20:29:14 ERROR (MainThread) [aiohttp.server] Error handling request
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_protocol.py", line 422, in _handle_request
-    resp = await self._request_handler(request)
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_app.py", line 468, in _handle
-    match_info = await self._router.resolve(request)
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_urldispatcher.py", line 1004, in resolve
-    match_dict, allowed = await resource.resolve(request)
-  File "/usr/src/homeassistant/homeassistant/components/frontend/__init__.py", line 543, in resolve
-    and request.url.parts[1] not in self.hass.data[DATA_PANELS]
-IndexError: tuple index out of range
-2021-09-17 20:35:40 ERROR (MainThread) [custom_components.hacs] 'str' object has no attribute 'items'
-2021-09-17 22:20:03 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities switch.air_purifier_2
-2021-09-17 22:20:08 ERROR (Thread-15) [pychromecast.socket_client] [Living Room Receiver(6.6.6.7):8009] Error reading from socket.
-2021-09-17 22:20:08 WARNING (Thread-15) [pychromecast.socket_client] [Living Room Receiver(6.6.6.7):8009] Error communicating with socket, resetting connection
-2021-09-17 22:44:23 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities switch.air_purifier_2
-2021-09-17 22:44:23 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Unexpected error
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 57, in _process
-    result = await handler(hass, data, inputs[0].get("payload"))
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 215, in handle_devices_execute
-    execute_results = await asyncio.gather(
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 158, in _entity_execute
-    await entity.execute(data, execution)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 570, in execute
-    await trt.execute(command, data, params, challenge)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/trait.py", line 361, in execute
-    await self.hass.services.async_call(
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1492, in async_call
-    task.result()
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1527, in _execute_service
-    await handler.job.target(service_call)
-  File "/usr/src/homeassistant/homeassistant/helpers/entity_component.py", line 213, in handle_service
-    await self.hass.helpers.service.entity_service_call(
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 658, in entity_service_call
-    future.result()  # pop exception if have
-  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 843, in async_request_call
-    await coro
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 695, in _handle_entity_call
-    await result
-  File "/usr/src/homeassistant/homeassistant/components/smartthings/switch.py", line 39, in async_turn_off
-    await self._device.switch_off(set_status=True)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/device.py", line 1013, in switch_off
-    result = await self.command(component_id, Capability.switch, Command.off)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/device.py", line 825, in command
-    response = await self._api.post_device_command(
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 147, in post_device_command
-    return await self.post(API_DEVICE_COMMAND.format(device_id=device_id), data)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 395, in post
-    return await self.request("post", self._api_base + resource, data=data)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 376, in request
-    resp.raise_for_status()
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/client_reqrep.py", line 1000, in raise_for_status
-    raise ClientResponseError(
-aiohttp.client_exceptions.ClientResponseError: 409, message='Conflict', url=URL('https://api.smartthings.com/v1/devices/650f9917-534d-4698-8409-29cc0a350971/commands')
-2021-09-17 22:44:23 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error handling message {'inputs': [{'context': {'locale_country': 'US', 'locale_language': 'en'}, 'intent': 'action.devices.EXECUTE', 'payload': {'commands': [{'devices': [{'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.dehumidifier'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.adaptive_lighting_bedroom_lights'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.bed_lamp_1'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.bed_lamp_2'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.dining_room_light_2'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.kitchen_light'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.adaptive_lighting_library_lights'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.hue_color_lamp_1_3'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.hue_color_lamp_1_2'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.hue_color_lamp_1'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.adaptive_lighting_living_room_lights'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.living_room_lamp_1'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.living_room_lamp_2'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.living_room_lamp_3'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.living_room_light_3'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.living_room_smart_tv'}, {'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'light.black_series_dimmer'}], 'execution': [{'command': 'action.devices.commands.OnOff', 'params': {'on': False}}]}]}}], 'requestId': '4391666406417985843'}: {'errorCode': 'unknownError'}
-2021-09-17 23:24:58 WARNING (Thread-8) [pychromecast.socket_client] [Bedroom Hub(6.6.6.199):8009] Heartbeat timeout, resetting connection
-2021-09-17 23:49:13 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-17 23:56:31 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 00:23:50 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 00:39:37 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 00:45:55 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 00:56:28 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 01:16:20 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 02:28:43 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Error reading from socket.
-2021-09-18 02:28:43 WARNING (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Error communicating with socket, resetting connection
-2021-09-18 02:29:13 WARNING (Thread-6) [pychromecast.socket_client] [Living Room speaker(6.6.6.93):8009] Heartbeat timeout, resetting connection
-2021-09-18 02:29:28 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Error reading from socket.
-2021-09-18 02:29:28 WARNING (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Error communicating with socket, resetting connection
-2021-09-18 02:29:34 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.79):32171] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.79', 32171)), retrying in 5.0s
-2021-09-18 02:30:00 WARNING (MainThread) [custom_components.auto_backup] The service 'snapshot_full' is deprecated and will be removed in Home Assistant 2021.11, use 'backup_full' instead
-2021-09-18 02:33:27 ERROR (MainThread) [custom_components.auto_backup] Failed to purge backup: Unknown error, see supervisor
-2021-09-18 02:33:27 ERROR (MainThread) [custom_components.auto_backup] Failed to purge backup: Unknown error, see supervisor
-2021-09-18 03:19:17 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 03:21:27 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 03:25:28 WARNING (Thread-9) [pychromecast.socket_client] [Library TV(6.6.6.21):8009] Heartbeat timeout, resetting connection
-2021-09-18 03:25:43 ERROR (Thread-9) [pychromecast.socket_client] [Library TV(6.6.6.21):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.21', 8009)), retrying in 5.0s
-2021-09-18 03:31:43 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 03:32:13 ERROR (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.169', 8009)), retrying in 5.0s
-2021-09-18 04:01:48 ERROR (Thread-12) [pychromecast.socket_client] [Kitchen Hub(6.6.6.142):8009] Error reading from socket.
-2021-09-18 04:01:48 WARNING (Thread-12) [pychromecast.socket_client] [Kitchen Hub(6.6.6.142):8009] Error communicating with socket, resetting connection
-2021-09-18 04:01:49 ERROR (Thread-12) [pychromecast.socket_client] [Kitchen Hub(6.6.6.142):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.142', 8009)), retrying in 5.0s
-2021-09-18 04:01:51 ERROR (Thread-8) [pychromecast.socket_client] [Bedroom Hub(6.6.6.199):8009] Error reading from socket.
-2021-09-18 04:01:51 WARNING (Thread-8) [pychromecast.socket_client] [Bedroom Hub(6.6.6.199):8009] Error communicating with socket, resetting connection
-2021-09-18 04:01:51 ERROR (Thread-8) [pychromecast.socket_client] [Bedroom Hub(6.6.6.199):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.199', 8009)), retrying in 5.0s
-2021-09-18 04:05:10 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 04:14:57 WARNING (Thread-10) [pychromecast.socket_client] [Living Room Mini(6.6.6.79):8009] Heartbeat timeout, resetting connection
-2021-09-18 04:15:05 ERROR (Thread-10) [pychromecast.socket_client] [Living Room Mini(6.6.6.79):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.79', 8009)), retrying in 5.0s
-2021-09-18 04:29:03 WARNING (Thread-13) [pychromecast.socket_client] [Library Mini(6.6.6.179):8009] Heartbeat timeout, resetting connection
-2021-09-18 04:29:10 ERROR (Thread-13) [pychromecast.socket_client] [Library Mini(6.6.6.179):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.179', 8009)), retrying in 5.0s
-2021-09-18 04:55:05 WARNING (Thread-14) [pychromecast.socket_client] [Living Room TV(6.6.6.20):8009] Heartbeat timeout, resetting connection
-2021-09-18 04:55:24 ERROR (Thread-14) [pychromecast.socket_client] [Living Room TV(6.6.6.20):8009] Failed to connect to service ServiceInfo(type='host', data=('6.6.6.20', 8009)), retrying in 5.0s
-2021-09-18 05:00:29 ERROR (MainThread) [aiohttp.server] Error handling request
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_protocol.py", line 422, in _handle_request
-    resp = await self._request_handler(request)
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_app.py", line 468, in _handle
-    match_info = await self._router.resolve(request)
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/web_urldispatcher.py", line 1004, in resolve
-    match_dict, allowed = await resource.resolve(request)
-  File "/usr/src/homeassistant/homeassistant/components/frontend/__init__.py", line 543, in resolve
-    and request.url.parts[1] not in self.hass.data[DATA_PANELS]
-IndexError: tuple index out of range
-2021-09-18 05:11:19 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 05:46:03 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 05:48:07 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 06:47:57 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 07:05:49 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 07:14:15 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 07:20:31 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 07:29:58 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 08:36:09 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 09:22:26 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 11:10:28 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 11:29:26 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 12:16:37 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 12:20:51 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 12:31:22 WARNING (Thread-7) [pychromecast.socket_client] [Bedroom Mini(6.6.6.169):8009] Heartbeat timeout, resetting connection
-2021-09-18 12:53:27 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Unexpected error
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 57, in _process
-    result = await handler(hass, data, inputs[0].get("payload"))
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 215, in handle_devices_execute
-    execute_results = await asyncio.gather(
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/smart_home.py", line 158, in _entity_execute
-    await entity.execute(data, execution)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 570, in execute
-    await trt.execute(command, data, params, challenge)
-  File "/usr/src/homeassistant/homeassistant/components/google_assistant/trait.py", line 361, in execute
-    await self.hass.services.async_call(
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1492, in async_call
-    task.result()
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1527, in _execute_service
-    await handler.job.target(service_call)
-  File "/usr/src/homeassistant/homeassistant/helpers/entity_component.py", line 213, in handle_service
-    await self.hass.helpers.service.entity_service_call(
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 658, in entity_service_call
-    future.result()  # pop exception if have
-  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 843, in async_request_call
-    await coro
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 695, in _handle_entity_call
-    await result
-  File "/usr/src/homeassistant/homeassistant/components/smartthings/switch.py", line 39, in async_turn_off
-    await self._device.switch_off(set_status=True)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/device.py", line 1013, in switch_off
-    result = await self.command(component_id, Capability.switch, Command.off)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/device.py", line 825, in command
-    response = await self._api.post_device_command(
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 147, in post_device_command
-    return await self.post(API_DEVICE_COMMAND.format(device_id=device_id), data)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 395, in post
-    return await self.request("post", self._api_base + resource, data=data)
-  File "/usr/local/lib/python3.9/site-packages/pysmartthings/api.py", line 376, in request
-    resp.raise_for_status()
-  File "/usr/local/lib/python3.9/site-packages/aiohttp/client_reqrep.py", line 1000, in raise_for_status
-    raise ClientResponseError(
-aiohttp.client_exceptions.ClientResponseError: 409, message='Conflict', url=URL('https://api.smartthings.com/v1/devices/650f9917-534d-4698-8409-29cc0a350971/commands')
-2021-09-18 12:53:27 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error handling message {'inputs': [{'context': {'locale_country': 'US', 'locale_language': 'en'}, 'intent': 'action.devices.EXECUTE', 'payload': {'commands': [{'devices': [{'customData': {'baseUrl': 'https://leviathan.network', 'httpPort': 443, 'httpSSL': True, 'proxyDeviceId': '81f4b376-cd12-4150-a3c4-6afc9f126264', 'uuid': '702f3d71a28548fc92a79b71b0d93086', 'webhookId': 'cd18f5120203198a8fafa294478288dfc4fbc7ba605f0f41e0d0a6b0c5bf2f4c'}, 'id': 'switch.living_room_smart_tv'}], 'execution': [{'command': 'action.devices.commands.OnOff', 'params': {'on': False}}]}]}}], 'requestId': '8256559065944439824'}: {'errorCode': 'unknownError'}
-2021-09-18 19:01:32 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Error reading from socket.
-2021-09-18 19:01:32 WARNING (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Error communicating with socket, resetting connection
-2021-09-18 19:01:35 ERROR (Thread-11) [pychromecast.socket_client] [Home Speakers(6.6.6.93):32171] Failed to connect to service ServiceInfo(type='mdns', data='Google-Cast-Group-afbc416fa25b48169ee9aa4bf14be785-1._googlecast._tcp.local.'), retrying in 5.0s
-2021-09-18 19:01:39 WARNING (Thread-13) [pychromecast.socket_client] [Library Mini(6.6.6.179):8009] Heartbeat timeout, resetting connection
-2021-09-18 19:01:46 WARNING (Thread-8) [pychromecast.socket_client] [Bedroom Hub(6.6.6.199):8009] Heartbeat timeout, resetting connection
-2021-09-18 19:37:05 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities switch.roof_christmas_lights1
+2022-01-14 13:11:29 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:11:48 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.58 (108.162.245.58). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:11:48 WARNING (MainThread) [homeassistant.components.http.ban] Banned IP 108.162.245.58 for too many login attempts
+2022-01-14 13:12:31 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.246.19 (108.162.246.19). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:14:33 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.62 (172.70.34.62). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:14:34 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.106.22 (162.158.106.22). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:15:04 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.78.104 (162.158.78.104). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:17:52 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.96 (108.162.245.96). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:19:13 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.115 (172.70.175.115). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:19:34 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.80 (108.162.245.80). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:19:58 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.100 (108.162.245.100). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:22:30 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.80 (108.162.245.80). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:23:59 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.246.19 (108.162.246.19). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:25:43 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.80 (108.162.245.80). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:27:57 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.106.22 (162.158.106.22). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:30:50 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.80 (108.162.245.80). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:34:09 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:34:39 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:35:23 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:35:59 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.96 (108.162.245.96). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:39:34 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Stream ended; no additional packets
+2022-01-14 13:40:34 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:41:44 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:42:05 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 108.162.245.56 (108.162.245.56). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 13:43:05 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:44:35 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:46:19 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:48:09 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:50:09 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:52:20 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:54:40 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:57:10 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 13:59:50 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:02:41 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:05:41 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:08:51 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:12:12 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:15:42 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:19:22 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:23:14 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:27:14 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:31:24 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:35:45 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:39:33 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.168 (172.70.34.168). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 14:39:33 WARNING (MainThread) [homeassistant.components.http.ban] Banned IP 172.70.34.168 for too many login attempts
+2022-01-14 14:39:33 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.175.115 (172.70.175.115). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 14:39:33 WARNING (MainThread) [homeassistant.components.http.ban] Banned IP 172.70.175.115 for too many login attempts
+2022-01-14 14:40:04 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 162.158.78.96 (162.158.78.96). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 14:40:15 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:40:28 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 172.70.34.62 (172.70.34.62). (Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36)
+2022-01-14 14:44:56 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:49:47 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:54:48 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 14:59:58 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 15:05:19 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 15:10:50 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 15:16:30 ERROR (stream_worker) [homeassistant.components.stream] Error from stream worker: Error opening stream rtsps://stream-ue1-charlie.dropcam.com:443/sdm_live_stream/CiUA2vuxr0kScskwCcpnEc38ZEtFzDgQpt7OKb4VfQwZ7BOF4K8JEnEAYm9dxzFCmT0bdrqTp9GXqwdlapdKFhvds9S4JSE7SRN3b1369E5_8OWChB4skEi6WwslEnf1gv_BP89hPaAqzANNR76Shp_KLiiHvRieECOGofKV7w9xc5p_ZCrUylfI-TYi2TPQFGg3xcURd9RtXQ?auth=****
+2022-01-14 15:17:16 WARNING (SyncWorker_6) [homeassistant.loader] We found a custom integration auto_backup which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-01-14 15:17:16 WARNING (SyncWorker_4) [homeassistant.loader] We found a custom integration thermal_comfort which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-01-14 15:17:16 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration fontawesome which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-01-14 15:17:16 WARNING (SyncWorker_2) [homeassistant.loader] We found a custom integration adaptive_lighting which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-01-14 15:17:16 WARNING (SyncWorker_5) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-01-14 15:18:19 ERROR (MainThread) [homeassistant.components.hassio.handler] Timeout on /homeassistant/restart request
