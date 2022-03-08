@@ -1,32 +1,48 @@
-  - alias: Perform Daily Backup
-    trigger:
-      platform: time
-      at: "02:30:00"
-    condition:
-      condition: time # Perform backup every day except Mondays.
-      weekday:
-        - tue
-        - wed
-        - thu
-        - fri
-        - sat
-        - sun
-    action:
-      service: auto_backup.backup_full
-      data_template:
-        name: "DailyBackup: {{ now().strftime('%A, %B %-d, %Y') }}"
-        keep_days: 6
-
-  - alias: Perform Weekly Backup
-    trigger:
-      platform: time
-      at: "02:30:00"
-    condition:
-      condition: time # On Mondays perform a weekly backup
-      weekday:
-        - mon
-    action:
-      service: auto_backup.backup_full
-      data_template:
-        name: "WeeklyBackup: {{ now().strftime('%A, %B %-d, %Y') }}"
-        keep_days: 22
+- alias: Perform Daily Backup
+  trigger:
+    platform: time
+    at: 02:30:00
+  condition:
+    condition: time
+    weekday:
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+    - sun
+  action:
+    service: auto_backup.backup_full
+    data_template:
+      name: 'DailyBackup: {{ now().strftime(''%A, %B %-d, %Y'') }}'
+      keep_days: 6
+  id: 229fd4a8bf9e4e43bed1028acc2b0cb2
+- alias: Perform Weekly Backup
+  trigger:
+    platform: time
+    at: 02:30:00
+  condition:
+    condition: time
+    weekday:
+    - mon
+  action:
+    service: auto_backup.backup_full
+    data_template:
+      name: 'WeeklyBackup: {{ now().strftime(''%A, %B %-d, %Y'') }}'
+      keep_days: 22
+  id: 8e39c3f5f2fb4ad1b4554b960bca1630
+- id: '1646753017988'
+  alias: Low battery level detection & notification for all battery sensors
+  description: ''
+  use_blueprint:
+    path: sbyx/low-battery-level-detection-notification-for-all-battery-sensors.yaml
+    input:
+      time: '16:00:00'
+      actions:
+      - service: notify.notify
+        data:
+          title: Low Battery
+          message: ' {{sensors}} '
+          data:
+            persistent: false
+            tag: lowbatt

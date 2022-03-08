@@ -1,0 +1,760 @@
+- id: '1642196086952'
+  name: All On General
+  entities:
+    light.bed_lamp_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 167
+      hs_color:
+      - 30.635
+      - 7.252
+      rgb_color:
+      - 255
+      - 245
+      - 236
+      xy_color:
+      - 0.34
+      - 0.337
+      mode: normal
+      dynamics: none
+      friendly_name: Bed Lamp 1
+      supported_features: 40
+      state: 'on'
+    light.bed_lamp_2:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 166
+      hs_color:
+      - 31.007
+      - 6.862
+      rgb_color:
+      - 255
+      - 246
+      - 237
+      xy_color:
+      - 0.339
+      - 0.338
+      mode: normal
+      dynamics: none
+      friendly_name: Bed Lamp 2
+      supported_features: 40
+      state: 'on'
+    light.hue_filament_bulb_1:
+      min_mireds: 222
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 257
+      hs_color:
+      - 26.868
+      - 36.88
+      rgb_color:
+      - 255
+      - 203
+      - 160
+      xy_color:
+      - 0.427
+      - 0.368
+      mode: normal
+      dynamics: none
+      friendly_name: Lamp 4
+      supported_features: 40
+      state: 'on'
+    light.living_room_lamp_3:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 184
+      hs_color:
+      - 27.746
+      - 13.648
+      rgb_color:
+      - 255
+      - 236
+      - 220
+      xy_color:
+      - 0.356
+      - 0.344
+      mode: normal
+      dynamics: none
+      friendly_name: Living Room Lamp 3
+      supported_features: 40
+      state: 'on'
+    light.living_room_lamp_2:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 182
+      hs_color:
+      - 27.913
+      - 12.917
+      rgb_color:
+      - 255
+      - 237
+      - 222
+      xy_color:
+      - 0.354
+      - 0.343
+      mode: normal
+      dynamics: none
+      friendly_name: Living Room Lamp 2
+      supported_features: 40
+      state: 'on'
+    light.living_room_lamp_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 179
+      hs_color:
+      - 28.213
+      - 11.817
+      rgb_color:
+      - 255
+      - 239
+      - 224
+      xy_color:
+      - 0.352
+      - 0.343
+      mode: normal
+      dynamics: none
+      friendly_name: Living Room Lamp 1
+      supported_features: 40
+      state: 'on'
+    light.living_room_light_3:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      friendly_name: Living Room Light
+      supported_features: 32
+      state: 'on'
+    switch.living_room_light_3:
+      friendly_name: Living Room Light
+      state: 'on'
+    light.hue_color_lamp_1_3:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 246
+      hs_color:
+      - 26.785
+      - 33.706
+      rgb_color:
+      - 255
+      - 207
+      - 169
+      xy_color:
+      - 0.416
+      - 0.363
+      mode: normal
+      dynamics: none
+      friendly_name: Library Lamp 1
+      supported_features: 40
+      state: 'on'
+    light.hue_color_lamp_1_2:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 244
+      hs_color:
+      - 26.773
+      - 33.124
+      rgb_color:
+      - 255
+      - 208
+      - 170
+      xy_color:
+      - 0.415
+      - 0.363
+      mode: normal
+      dynamics: none
+      friendly_name: Library Lamp 2
+      supported_features: 40
+      state: 'on'
+    light.hue_color_lamp_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 185
+      hs_color:
+      - 27.673
+      - 14.004
+      rgb_color:
+      - 255
+      - 235
+      - 219
+      xy_color:
+      - 0.357
+      - 0.344
+      mode: normal
+      dynamics: none
+      friendly_name: Library Lamp 3
+      supported_features: 40
+      state: 'on'
+    light.kitchen_light:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      friendly_name: Kitchen Light
+      supported_features: 32
+      state: 'on'
+    switch.kitchen_light:
+      friendly_name: Kitchen Light
+      state: 'on'
+    light.dining_room_light_2:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      friendly_name: Dining Room Light
+      supported_features: 32
+      state: 'on'
+    switch.dining_room_light_2:
+      friendly_name: Dining Room Light
+      state: 'on'
+  icon: mdi:sun-wireless
+- id: '1642196504789'
+  name: All Off
+  entities:
+    light.bed_lamp_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      mode: normal
+      dynamics: none
+      friendly_name: Bed Lamp 1
+      supported_features: 40
+      state: 'off'
+    light.bed_lamp_2:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      mode: normal
+      dynamics: none
+      friendly_name: Bed Lamp 2
+      supported_features: 40
+      state: 'off'
+    light.hue_filament_bulb_1:
+      min_mireds: 222
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      mode: normal
+      dynamics: none
+      friendly_name: Lamp 4
+      supported_features: 40
+      state: 'off'
+    light.living_room_lamp_3:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      mode: normal
+      dynamics: none
+      friendly_name: Living Room Lamp 3
+      supported_features: 40
+      state: 'off'
+    light.living_room_lamp_2:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      mode: normal
+      dynamics: none
+      friendly_name: Living Room Lamp 2
+      supported_features: 40
+      state: 'off'
+    light.living_room_lamp_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      mode: normal
+      dynamics: none
+      friendly_name: Living Room Lamp 1
+      supported_features: 40
+      state: 'off'
+    light.living_room_light_3:
+      supported_color_modes:
+      - brightness
+      friendly_name: Living Room Light
+      supported_features: 32
+      state: 'off'
+    switch.living_room_light_3:
+      friendly_name: Living Room Light
+      state: 'on'
+    light.hue_color_lamp_1_3:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      mode: normal
+      dynamics: none
+      friendly_name: Library Lamp 1
+      supported_features: 40
+      state: 'off'
+    light.hue_color_lamp_1_2:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      mode: normal
+      dynamics: none
+      friendly_name: Library Lamp 2
+      supported_features: 40
+      state: 'off'
+    light.hue_color_lamp_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      mode: normal
+      dynamics: none
+      friendly_name: Library Lamp 3
+      supported_features: 40
+      state: 'off'
+    light.kitchen_light:
+      supported_color_modes:
+      - brightness
+      friendly_name: Kitchen Light
+      supported_features: 32
+      state: 'off'
+    switch.kitchen_light:
+      friendly_name: Kitchen Light
+      state: 'on'
+    light.dining_room_light_2:
+      supported_color_modes:
+      - brightness
+      friendly_name: Dining Room Light
+      supported_features: 32
+      state: 'off'
+    switch.dining_room_light_2:
+      friendly_name: Dining Room Light
+      state: 'on'
+    switch.adaptive_lighting_bedroom_lights:
+      brightness_pct:
+      color_temp_kelvin:
+      color_temp_mired:
+      rgb_color:
+      xy_color:
+      hs_color:
+      sun_position:
+      icon: mdi:theme-light-dark
+      friendly_name: 'Adaptive Lighting: Bedroom Lights'
+      state: 'off'
+    switch.adaptive_lighting_library_lights:
+      brightness_pct:
+      color_temp_kelvin:
+      color_temp_mired:
+      rgb_color:
+      xy_color:
+      hs_color:
+      sun_position:
+      icon: mdi:theme-light-dark
+      friendly_name: 'Adaptive Lighting: Library Lights'
+      state: 'off'
+    switch.adaptive_lighting_living_room_lights:
+      brightness_pct:
+      color_temp_kelvin:
+      color_temp_mired:
+      rgb_color:
+      xy_color:
+      hs_color:
+      sun_position:
+      icon: mdi:theme-light-dark
+      friendly_name: 'Adaptive Lighting: Living Room Lights'
+      state: 'off'
+  icon: mdi:sun-wireless-outline
+- id: '1642397546433'
+  name: All On Candle
+  entities:
+    light.bed_lamp_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 51
+      color_temp: 497
+      hs_color:
+      - 30.548
+      - 93.899
+      rgb_color:
+      - 255
+      - 137
+      - 15
+      xy_color:
+      - 0.597
+      - 0.383
+      mode: normal
+      dynamics: none
+      friendly_name: Bed Lamp 1
+      supported_features: 40
+      state: 'on'
+    light.bed_lamp_2:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 51
+      color_temp: 497
+      hs_color:
+      - 30.548
+      - 93.899
+      rgb_color:
+      - 255
+      - 137
+      - 15
+      xy_color:
+      - 0.597
+      - 0.383
+      mode: normal
+      dynamics: none
+      friendly_name: Bed Lamp 2
+      supported_features: 40
+      state: 'on'
+    light.hue_filament_bulb_1:
+      min_mireds: 222
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 26
+      color_temp: 454
+      hs_color:
+      - 29.79
+      - 84.553
+      rgb_color:
+      - 255
+      - 146
+      - 39
+      xy_color:
+      - 0.579
+      - 0.388
+      mode: normal
+      dynamics: none
+      friendly_name: Lamp 4
+      supported_features: 40
+      state: 'on'
+    light.living_room_lamp_3:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 26
+      color_temp: 500
+      hs_color:
+      - 30.601
+      - 94.547
+      rgb_color:
+      - 255
+      - 136
+      - 13
+      xy_color:
+      - 0.599
+      - 0.382
+      mode: normal
+      dynamics: none
+      friendly_name: Living Room Lamp 3
+      supported_features: 40
+      state: 'on'
+    light.living_room_lamp_2:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 26
+      color_temp: 500
+      hs_color:
+      - 30.601
+      - 94.547
+      rgb_color:
+      - 255
+      - 136
+      - 13
+      xy_color:
+      - 0.599
+      - 0.382
+      mode: normal
+      dynamics: none
+      friendly_name: Living Room Lamp 2
+      supported_features: 40
+      state: 'on'
+    light.living_room_lamp_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 26
+      color_temp: 500
+      hs_color:
+      - 30.601
+      - 94.547
+      rgb_color:
+      - 255
+      - 136
+      - 13
+      xy_color:
+      - 0.599
+      - 0.382
+      mode: normal
+      dynamics: none
+      friendly_name: Living Room Lamp 1
+      supported_features: 40
+      state: 'on'
+    light.living_room_light_3:
+      supported_color_modes:
+      - brightness
+      friendly_name: Living Room Light
+      supported_features: 32
+      state: 'off'
+    switch.living_room_light_3:
+      friendly_name: Living Room Light
+      state: 'on'
+    light.hue_color_lamp_1_3:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 38
+      color_temp: 500
+      hs_color:
+      - 30.601
+      - 94.547
+      rgb_color:
+      - 255
+      - 136
+      - 13
+      xy_color:
+      - 0.599
+      - 0.382
+      mode: normal
+      dynamics: none
+      friendly_name: Library Lamp 1
+      supported_features: 40
+      state: 'on'
+    light.hue_color_lamp_1_2:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 38
+      color_temp: 500
+      hs_color:
+      - 30.601
+      - 94.547
+      rgb_color:
+      - 255
+      - 136
+      - 13
+      xy_color:
+      - 0.599
+      - 0.382
+      mode: normal
+      dynamics: none
+      friendly_name: Library Lamp 2
+      supported_features: 40
+      state: 'on'
+    light.hue_color_lamp_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 38
+      color_temp: 500
+      hs_color:
+      - 30.601
+      - 94.547
+      rgb_color:
+      - 255
+      - 136
+      - 13
+      xy_color:
+      - 0.599
+      - 0.382
+      mode: normal
+      dynamics: none
+      friendly_name: Library Lamp 3
+      supported_features: 40
+      state: 'on'
+    light.kitchen_light:
+      supported_color_modes:
+      - brightness
+      friendly_name: Kitchen Light
+      supported_features: 32
+      state: 'off'
+    switch.kitchen_light:
+      friendly_name: Kitchen Light
+      state: 'on'
+    light.dining_room_light_2:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 26
+      friendly_name: Dining Room Light
+      supported_features: 32
+      state: 'on'
+    switch.dining_room_light_2:
+      friendly_name: Dining Room Light
+      state: 'on'
+  icon: mdi:candle
+- id: '1642779890798'
+  name: Adaptive On
+  entities:
+    switch.adaptive_lighting_bedroom_lights:
+      brightness_pct: 100
+      color_temp_kelvin: 6214.452172457521
+      color_temp_mired: 160
+      rgb_color:
+      - 255
+      - 249.64139767388258
+      - 242.6569660237068
+      xy_color:
+      - 0.333
+      - 0.336
+      hs_color:
+      - 36.923
+      - 5.098
+      sun_position: 0.8399145541157421
+      manual_control: []
+      icon: mdi:theme-light-dark
+      friendly_name: 'Adaptive Lighting: Bedroom Lights'
+      state: 'on'
+    switch.adaptive_lighting_library_lights:
+      brightness_pct: 100
+      color_temp_kelvin: 4940.228281548818
+      color_temp_mired: 202
+      rgb_color:
+      - 255
+      - 226.81622709758955
+      - 203.84493860143675
+      xy_color:
+      - 0.374
+      - 0.35
+      hs_color:
+      - 25.882
+      - 20
+      sun_position: 0.8400652232996623
+      manual_control: []
+      icon: mdi:theme-light-dark
+      friendly_name: 'Adaptive Lighting: Library Lights'
+      state: 'on'
+    switch.adaptive_lighting_living_room_lights:
+      brightness_pct: 100
+      color_temp_kelvin: 4940.659544669437
+      color_temp_mired: 202
+      rgb_color:
+      - 255
+      - 226.82491014095882
+      - 203.86009871801377
+      xy_color:
+      - 0.374
+      - 0.35
+      hs_color:
+      - 25.882
+      - 20
+      sun_position: 0.840188441334125
+      manual_control: []
+      icon: mdi:theme-light-dark
+      friendly_name: 'Adaptive Lighting: Living Room Lights'
+      state: 'on'
+  icon: mdi:lightbulb-auto
+- id: '1642779936788'
+  name: Adaptive Off
+  entities:
+    switch.adaptive_lighting_bedroom_lights:
+      brightness_pct:
+      color_temp_kelvin:
+      color_temp_mired:
+      rgb_color:
+      xy_color:
+      hs_color:
+      sun_position:
+      icon: mdi:theme-light-dark
+      friendly_name: 'Adaptive Lighting: Bedroom Lights'
+      state: 'off'
+    switch.adaptive_lighting_library_lights:
+      brightness_pct:
+      color_temp_kelvin:
+      color_temp_mired:
+      rgb_color:
+      xy_color:
+      hs_color:
+      sun_position:
+      icon: mdi:theme-light-dark
+      friendly_name: 'Adaptive Lighting: Library Lights'
+      state: 'off'
+    switch.adaptive_lighting_living_room_lights:
+      brightness_pct:
+      color_temp_kelvin:
+      color_temp_mired:
+      rgb_color:
+      xy_color:
+      hs_color:
+      sun_position:
+      icon: mdi:theme-light-dark
+      friendly_name: 'Adaptive Lighting: Living Room Lights'
+      state: 'off'
+  icon: mdi:lightbulb-auto-outline

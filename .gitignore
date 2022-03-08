@@ -47,3 +47,4 @@ ip_bans.yaml
 production_auth.json
 OZW_Log.txt
 www/community/weather-card
+nest/event_media

@@ -1,0 +1,42 @@
+rainbows:
+  sequence:
+  - scene: scene.adaptive_off
+  - scene: scene.all_on_candle
+  - service: light.turn_on
+    data:
+      effect: colorloop
+      brightness_step_pct: 75
+    target:
+      device_id:
+      - 761f5f26fe9811eaa42cff00c94df4ba
+      - 76232065fe9811ea9606f96eafbeaea5
+      - 31e5d8a03b017a62da003a3bcd1e084e
+      - 603085fa02087e4a36f893ef00e9b444
+      - 6485792482e453267316fe8ff28e240c
+      - 761bb28afe9811ea979c1bce7f4a0d9b
+      - 7618ded5fe9811eaa6839ddefbf42950
+      - 76163241fe9811ea82109dc6672b92f8
+  - service: light.turn_off
+    target:
+      device_id:
+      - 9cdcd5c15ecd77e74e89d716a9dfd36a
+      - e7490377e0dc0fffaccba9ec73eee0dd
+  mode: restart
+  alias: Rainbows
+  icon: mdi:looks
+all_on_general:
+  alias: All On General
+  sequence:
+  - scene: scene.adaptive_off
+  - scene: scene.all_on_general
+  - scene: scene.adaptive_on
+  mode: restart
+  icon: mdi:sun-wireless
+all_on_candle:
+  alias: All On Candle
+  sequence:
+  - scene: scene.adaptive_off
+  - scene: scene.all_on_candle
+  - scene: scene.adaptive_on
+  mode: restart
+  icon: mdi:sun-wireless-outline
