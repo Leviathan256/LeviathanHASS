@@ -40,3 +40,16 @@ all_on_candle:
   - scene: scene.adaptive_on
   mode: restart
   icon: mdi:sun-wireless-outline
+alllightsoff:
+  sequence:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.adaptive_off
+    metadata: {}
+  - service: scene.turn_on
+    target:
+      entity_id: scene.all_off
+    metadata: {}
+  mode: restart
+  icon: mdi:lightbulb-auto-outline
+  alias: All Lights Off

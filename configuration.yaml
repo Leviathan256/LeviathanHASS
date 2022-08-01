@@ -1,12 +1,19 @@
 default_config:
 homeassistant:
+  name: Home
   latitude: !secret lat
   longitude: !secret lon
+  elevation: 1050
+  unit_system: imperial
+  currency: USD
+  external_url: "https://home.leviathan.network"
+  internal_url: "https://home.leviathan.network"
+  time_zone: "America/New_York"
 
 recorder:
   db_url: !secret mariadb_path
   auto_purge: true
-  purge_keep_days: 14
+  purge_keep_days: 90
   commit_interval: 1
 
 frontend:
@@ -75,11 +82,6 @@ input_number:
     step: 1
     mode: box
 
-nest:
-  client_id: !secret nest_clientid
-  client_secret: !secret nest_clientsecret
-  project_id: !secret nest_projid
-
 hacs:
   token: !secret git_token
   theme: true
@@ -90,14 +92,6 @@ hacs:
 auto_backup:
   auto_purge: true
   backup_timeout: 1800
-
-sensor:
-  - platform: thermal_comfort
-    sensors:
-      livingroom:
-        friendly_name: Living Room
-        temperature_sensor: sensor.living_room_temperature
-        humidity_sensor: sensor.living_room_humidity
 
 group: !include groups.yaml
 automation: !include automations.yaml

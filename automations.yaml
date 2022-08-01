@@ -1,9 +1,10 @@
-- alias: Perform Daily Backup
+- id: 229fd4a8bf9e4e43bed1028acc2b0cb2
+  alias: Perform Daily Backup
   trigger:
-    platform: time
+  - platform: time
     at: 02:30:00
   condition:
-    condition: time
+  - condition: time
     weekday:
     - tue
     - wed
@@ -11,26 +12,28 @@
     - fri
     - sat
     - sun
+    before: 00:00:00
   action:
-    service: auto_backup.backup_full
+  - service: auto_backup.backup_full
     data_template:
       name: 'DailyBackup: {{ now().strftime(''%A, %B %-d, %Y'') }}'
-      keep_days: 6
-  id: 229fd4a8bf9e4e43bed1028acc2b0cb2
-- alias: Perform Weekly Backup
+      keep_days: 1
+- id: 8e39c3f5f2fb4ad1b4554b960bca1630
+  alias: Perform Weekly Backup
   trigger:
-    platform: time
+  - platform: time
     at: 02:30:00
   condition:
-    condition: time
+  - condition: time
     weekday:
     - mon
+    before: 00:00:00
+    after: 00:00:00
   action:
-    service: auto_backup.backup_full
+  - service: auto_backup.backup_full
     data_template:
       name: 'WeeklyBackup: {{ now().strftime(''%A, %B %-d, %Y'') }}'
-      keep_days: 22
-  id: 8e39c3f5f2fb4ad1b4554b960bca1630
+      keep_days: 7
 - id: '1646753017988'
   alias: Low battery level detection & notification for all battery sensors
   description: ''
